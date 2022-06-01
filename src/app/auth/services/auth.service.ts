@@ -9,7 +9,7 @@ import { of, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl: string = environment.baseUrl;
+  private baseUrl: string = environment.baseUrlAuth;
   private _user!: User;
 
   get user() {

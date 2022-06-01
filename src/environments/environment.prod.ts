@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:4000/api',
+  baseUrlAuth: 'http://localhost:4000/api',
+  baseUrlSongs: 'https://api.spotify.com/v1',
 };

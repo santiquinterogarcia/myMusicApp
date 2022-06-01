@@ -5,11 +5,17 @@ import { AuthService } from '../../../auth/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [],
+  styles: [
+    `
+      .separador {
+        width: 5px;
+      }
+    `,
+  ],
 })
 export class HeaderComponent implements OnInit {
   routes = [
-    { name: 'Home', route: '/songs/home' },
+    /* { name: 'Home', route: '/songs/home' }, */
     { name: 'Favorites', route: '/songs/favorites' },
   ];
 
