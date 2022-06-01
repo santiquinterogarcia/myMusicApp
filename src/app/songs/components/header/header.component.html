@@ -1,2 +1,35 @@
-<p>{{user.name}}</p>
-<button (click)="logout()">Logout</button>
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/songs/home">
+      <img src="https://icones.pro/wp-content/uploads/2021/04/logo-spotify-icone-png-noir.png" alt="" width="40"
+        class="d-inline-block align-text-top">
+    </a>
+
+  </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li *ngFor="let route of routes" class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page"
+            [routerLink]="route.route">{{route.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <span class=" navbar-text">
+            {{user.name}}
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-light ml-3" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

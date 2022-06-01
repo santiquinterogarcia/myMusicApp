@@ -8,6 +8,11 @@ import { AuthService } from '../../../auth/services/auth.service';
   styles: [],
 })
 export class HeaderComponent implements OnInit {
+  routes = [
+    { name: 'Home', route: '/songs/home' },
+    { name: 'Favorites', route: '/songs/favorites' },
+  ];
+
   get user() {
     return this.authService.user;
   }
