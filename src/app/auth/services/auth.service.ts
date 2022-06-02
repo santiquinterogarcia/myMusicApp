@@ -29,6 +29,9 @@ export class AuthService {
             name: res.name!,
             uid: res.uid!,
           };
+          if (!localStorage.getItem(this._user.uid)) {
+            localStorage.setItem(this._user.uid, '[]');
+          }
         }
       }),
       map((res) => res.ok),
@@ -47,6 +50,9 @@ export class AuthService {
             name: res.name!,
             uid: res.uid!,
           };
+          if (!localStorage.getItem(this._user.uid)) {
+            localStorage.setItem(this._user.uid, '[]');
+          }
         }
       }),
       map((res) => res.ok),

@@ -8,9 +8,9 @@
           <h5 class="card-title">{{item.track.name}}</h5>
           <div class="mb-3">
             <a class="card-text mb-3" href="{{item.track.preview_url}}" target="_blank">
-              Preview</a>
+              Listen preview</a>
           </div>
-          <div><button class="btn btn-primary">Go somewhere</button></div>
+          <button class="btn btn-primary" (click)="addToFavorites(item.track.id)">Add to favorites</button>
         </div>
       </div>
     </div>

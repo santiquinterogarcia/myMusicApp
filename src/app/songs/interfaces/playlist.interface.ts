@@ -1,4 +1,4 @@
-export interface RESTSpotify {
+export interface RESTPlaylistSpotify {
   collaborative: boolean;
   description: string;
   external_urls: ExternalUrls;
