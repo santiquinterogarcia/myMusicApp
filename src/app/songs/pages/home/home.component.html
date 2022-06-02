@@ -10,7 +10,10 @@
             <a class="card-text mb-3" href="{{item.track.preview_url}}" target="_blank">
               Listen preview</a>
           </div>
-          <button class="btn btn-primary" (click)="addToFavorites(item.track.id)">Add to favorites</button>
+          <button class="btn btn-primary" *ngIf="!isFavorite(item.track.id)" (click)="addToFavorites(item.track.id)">Add
+            to favorites</button>
+          <button class="btn btn-danger" *ngIf="isFavorite(item.track.id)" (click)="
+            removeOfFavorites(item.track.id)">Delete of favorites</button>
         </div>
       </div>
     </div>

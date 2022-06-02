@@ -10,7 +10,7 @@ import { RESTTrackSpotify } from '../interfaces/track.interface';
 export class SongsService {
   baseUrl: string = environment.baseUrlSongs;
   token: string =
-    'BQDjXXnnj4jgQvX_FGERkeE6LuPzix551xqbefGE8xgtrJTXyywLEKa7lk4ItexOSJJWA_2qXepGvzVtJoY';
+    'BQBef90ObrxAP6A_uHPr-vQ2Oiw8V-wxN_6riEKcDpz3R6KiH00DUSH7UhoySQrIKD37mYfzwAPmVap1PoI';
 
   credentials = {
     clienId: '7221ee9d0856473c84c52ce14200352b',

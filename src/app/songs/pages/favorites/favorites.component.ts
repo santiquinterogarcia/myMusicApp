@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { SongsService } from '../../services/songs.service';
 import { RESTTrackSpotify } from '../../interfaces/track.interface';
@@ -8,7 +8,7 @@ import { RESTTrackSpotify } from '../../interfaces/track.interface';
   templateUrl: './favorites.component.html',
   styles: [],
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent implements OnChanges {
   tracksList: RESTTrackSpotify[] = [];
 
   constructor(
@@ -27,7 +27,7 @@ export class FavoritesComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges): void {} /* 
 
   removeOfFavorites(idTrack: string) {
     const favoritesList = JSON.parse(
@@ -42,5 +42,5 @@ export class FavoritesComponent implements OnInit {
         JSON.stringify(favoritesList)
       );
     }
-  }
+  } */
 }

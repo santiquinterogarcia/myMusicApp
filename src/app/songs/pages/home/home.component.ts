@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SongsService } from '../../services/songs.service';
 import { Item } from '../../interfaces/playlist.interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   templateUrl: './home.component.html',
   styles: [],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   items: Item[] = [];
 
   constructor(
@@ -34,5 +34,25 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  removeOfFavorites(idTrack: string) {
+    const favoritesList = JSON.parse(
+      localStorage.getItem(this.authService.user.uid)!
+    );
+
+    if (favoritesList.includes(idTrack)) {
+      const indexTrack = favoritesList.indexOf(idTrack);
+      favoritesList.splice(indexTrack, 1);
+      localStorage.setItem(
+        this.authService.user.uid,
+        JSON.stringify(favoritesList)
+      );
+    }
+  }
+
+  isFavorite(idTrack: string): boolean {
+    const favoritesList = JSON.parse(
+      localStorage.getItem(this.authService.user.uid)!
+    );
+    return favoritesList.includes(idTrack);
+  }
 }
